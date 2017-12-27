@@ -6,8 +6,10 @@
 		value="src/test/resources/selenium_standalone_binaries/osx/googlechrome/64bit/chromedriver"></parameter>
 
 	<parameter name="testLogLevel" value="info"></parameter>
+	<!-- <parameter name="baseURL"
+		value="https://www.w3schools.com/html/html_tables.asp"></parameter> -->
 	<parameter name="baseURL"
-		value="https://www.w3schools.com/html/html_tables.asp"></parameter>
+		value="http://demo.guru99.com/selenium/newtours/"></parameter>
 	<parameter name="ScreenShotDirectory" value="Screenshot"></parameter>
 	<parameter name="TestExitReport" value="src/test/resources/test_exit.xlsx"></parameter>
 
@@ -17,8 +19,9 @@
 
 	<test name="SmokeTest" preserve-order="true">
 		<classes>
-			<class name="com.htmltables.HtmlTable"></class>
-			<class name="com.htmltables.HtmlTable2"></class>
+<!-- 			<class name="com.htmltables.HtmlTable"></class> -->
+<!-- 			<class name="com.htmltables.HtmlTable2"></class> -->
+			<class name="firstTest"></class>
 		</classes>
 	</test>
 </suite>
