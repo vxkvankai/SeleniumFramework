@@ -21,7 +21,7 @@
 		<classes>
 <!-- 			<class name="com.htmltables.HtmlTable"></class> -->
 <!-- 			<class name="com.htmltables.HtmlTable2"></class> -->
-			<class name="firstTest"></class>
+			<class name="com.htmltables.firstTest"></class>
 		</classes>
 	</test>
 </suite>

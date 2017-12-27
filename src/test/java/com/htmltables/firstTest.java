@@ -6,11 +6,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.pages.tables.TablePages;
 import com.utils.BaseUtils;
-import com.utils.ExcelUtils;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
 
 public class firstTest extends BaseUtils {
 
@@ -18,35 +15,33 @@ public class firstTest extends BaseUtils {
     public void launchBrowsers(ITestContext context) throws Exception {
 
         setDriver();
-        NavigatToUrl();
+        //You can call NavigatToUrl() if you set the baseurl in testng.xml
+        //NavigatToUrl();
+        //or you can call navigate.to directuly like below
+        driver.navigate().to("http://demo.guru99.com/selenium/newtours");
 
     }
 
-    //        WebDriver driver = new ChromeDriver();
-    // String baseUrl = "http://demo.guru99.com/selenium/newtours/";
-    String expectedTitle = "Welcome: Mercury Tours";
-    String actualTitle = "";
 
+    @Test(priority = 10)
+    public void TestTitle() {
 
-    //driver.get(baseUrl);
+        String expectedTitle = "Welcome: Mercury Tours";
+        //I would just call assert here and let the assert and testng frame tell you if the test failed.
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
 
-    // get the actual value of the title
-    actualTitle=driver.getTitle();
+        //        or the text book way of just system.out, you don't have to do, assert is better programming as above.
+        //        if (driver.getTitle().contentEquals(expectedTitle)) {
+        //            System.out.println("Test Passed!");
+        //        } else {
+        //            System.out.println("Test Failed");
+        //        }
 
-    /*
-     * compare the actual title of the page with the expected one and print the result as "Passed" or "Failed"
-     */
-    if(actualTitle.contentEquals(expectedTitle))
-    {
-        System.out.println("Test Passed!");
-    }else
-    {
-        System.out.println("Test Failed");
     }
 
     @AfterClass(alwaysRun = true)
-        public void terminateApp() {
-            tearDown();
-        }
+    public void terminateApp() {
+        tearDown();
+    }
 
-}}
+}
