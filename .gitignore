@@ -1,3 +1,4 @@
 Screenshot
 src/test/resources/selenium_standalone_binaries
 src/test/resources/selenium_standalone_zips
+/target/
