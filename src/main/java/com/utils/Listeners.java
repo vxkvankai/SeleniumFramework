@@ -1,9 +1,5 @@
 package com.utils;
 
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
-
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ISuite;
@@ -14,6 +10,10 @@ import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
 public class Listeners implements ITestListener, ISuiteListener, IInvokedMethodListener {
 
     private ExcelUtils t = new ExcelUtils();
@@ -22,6 +22,7 @@ public class Listeners implements ITestListener, ISuiteListener, IInvokedMethodL
     // This belongs to ISuiteListener and will execute before the Suite start
     @Override
     public void onStart(ISuite arg0) {
+
 
         Reporter.log("About to begin executing Suite " + arg0.getName(), true);
     }
@@ -34,7 +35,7 @@ public class Listeners implements ITestListener, ISuiteListener, IInvokedMethodL
 
     // This belongs to ITestListener and will execute before starting of Test set/batch 
     public void onStart(ITestContext arg0) {
-        TestngContext.setContext(arg0); // sets the context from Testng,xml
+
         Reporter.log("About to begin executing Test " + arg0.getName(), true);
 
     }

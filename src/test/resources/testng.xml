@@ -7,15 +7,13 @@
 
 	<parameter name="testLogLevel" value="info"></parameter>
 	<!-- <parameter name="baseURL"
-		value="https://www.w3schools.com/html/html_tables.asp"></parameter> -->
+ 		value="https://www.w3schools.com/html/html_tables.asp"></parameter> -->
 	<parameter name="baseURL"
 		value="http://demo.guru99.com/selenium/newtours/"></parameter>
 	<parameter name="ScreenShotDirectory" value="Screenshot"></parameter>
 	<parameter name="TestExitReport" value="src/test/resources/test_exit.xlsx"></parameter>
 
-	<listeners>
-		<listener class-name="com.utils.Listeners"></listener>
-	</listeners>
+	
 
 	<test name="SmokeTest" preserve-order="true">
 		<classes>
@@ -23,6 +21,8 @@
 <!-- 			<class name="com.htmltables.HtmlTable2"></class> -->
 <!-- 			<class name="com.htmltables.firstTest"></class> -->
 <class name="com.htmltables.TestExample1"></class>
+
+
 		</classes>
 	</test>
 </suite>
