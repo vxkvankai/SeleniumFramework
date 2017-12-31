@@ -1,17 +1,15 @@
 package com.htmltables;
 
-import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.util.List;
-
 import com.utils.BaseUtils;
 import com.utils.TestngContext;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class TestExample1 extends BaseUtils {
@@ -22,7 +20,7 @@ public class TestExample1 extends BaseUtils {
         //TestngContext.setContext(arg0);
         TestngContext.setContext(context);
         setDriver();
-        driver.navigate().to("http://book.theautomatedtester.co.uk");
+        driver.navigate().to("http://book.theautomatedtester.co.uk/chapter1");
     }
 
     @Test(priority = 10)
@@ -74,9 +72,31 @@ public class TestExample1 extends BaseUtils {
         //        Assert.assertEquals(driver.findElement(By.cssSelector(".mainbody>p>a")), "Home Page");
 
         //        //Find elements by linkText
-        List<WebElement> elements = driver.findElements(
-            By.linkText("Chapter1"));
-        Assert.assertEquals(1, elements.size());
+        //        List<WebElement> elements = driver.findElements(
+        //            By.linkText("Chapter1"));
+        //        Assert.assertEquals(1, elements.size());
+
+        //            // Implicit Waits  
+        //        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //        driver.findElement(By.xpath("//div[@id='multiplewindow']"));
+
+        // Explicit Waits
+        //        WebElement element = (new WebDriverWait(driver, 10))
+        //            .until(new ExpectedCondition<WebElement>() {
+        //                public WebElement apply1(WebDriver d) {
+        //                    return d.findElement(By.xpath("//div[@id='divontheleft']"));
+
+        //                @Override
+        //                public WebElement apply(WebDriver arg0) {
+        //                    // TODO Auto-generated method stub
+        //                    return null;
+        //                }
+        //            });
+
+
+        driver.findElement(By.xpath("//div[@id='divontheleft']"));
+        WebElement element = driver.findElement(By.xpath("//div[@id='multiplewindow']"));
+        wait.until(ExpectedConditions.elementToBeClickable(element)).clear();
 
 
 
