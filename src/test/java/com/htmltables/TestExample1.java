@@ -7,9 +7,6 @@ import org.testng.annotations.Test;
 
 import com.utils.BaseUtils;
 import com.utils.TestngContext;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 
 public class TestExample1 extends BaseUtils {
@@ -94,9 +91,9 @@ public class TestExample1 extends BaseUtils {
         //            });
 
 
-        driver.findElement(By.xpath("//div[@id='divontheleft']"));
-        WebElement element = driver.findElement(By.xpath("//div[@id='multiplewindow']"));
-        wait.until(ExpectedConditions.elementToBeClickable(element)).clear();
+        //        driver.findElement(By.xpath("//div[@id='divontheleft']"));
+        //        WebElement element = driver.findElement(By.xpath("//div[@id='multiplewindow']"));
+        //        wait.until(ExpectedConditions.elementToBeClickable(element)).clear();
 
 
 
